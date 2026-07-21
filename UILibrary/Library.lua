@@ -71,24 +71,28 @@ local function hoverEffect(btn, normal, hover)
     btn.MouseLeave:Connect(function()    tween(btn, {BackgroundColor3 = normal}) end)
 end
 
--- ── Icon assets (Roblox asset IDs) ───────────────────────────────────
---  Replace these with your own asset IDs once uploaded to Roblox.
+-- ── Icon assets (loaded directly from GitHub) ───────────────────────
+--  Images are fetched from UILibrary/assets/ in the GitHub repo.
+--  No Roblox asset IDs needed — just upload PNGs to that folder.
+--  Requires: Game Settings → Security → Allow HTTP Requests = ON
+local ASSET_BASE = "https://raw.githubusercontent.com/PXG4EXTERNAL/Ui-Exp/main/UILibrary/assets/"
+
 local Icons = {
-    All          = "rbxassetid://7733960981",
-    Audio        = "rbxassetid://7733715400",
-    Gameplay     = "rbxassetid://7733958882",
-    Graphics     = "rbxassetid://7734053495",
-    Units        = "rbxassetid://7733998724",
-    Enemies      = "rbxassetid://7733957785",
-    Miscellaneous= "rbxassetid://7733992780",
-    Keybinds     = "rbxassetid://7734001774",
-    Testing      = "rbxassetid://7733957785",
-    Search       = "rbxassetid://3926305904",
-    Close        = "rbxassetid://3926305904",
-    SectionIcon  = "rbxassetid://7734053495",
-    CheckIcon    = "rbxassetid://3926307682",   -- ✓
-    CrossIcon    = "rbxassetid://3926305904",   -- ✗
-    TeleportIcon = "rbxassetid://7734001774",
+    All          = ASSET_BASE .. "tab-all.png",
+    Audio        = ASSET_BASE .. "tab-audio.png",
+    Gameplay     = ASSET_BASE .. "tab-gameplay.png",
+    Graphics     = ASSET_BASE .. "tab-graphics.png",
+    Units        = ASSET_BASE .. "tab-units.png",
+    Enemies      = ASSET_BASE .. "tab-enemies.png",
+    Miscellaneous= ASSET_BASE .. "tab-misc.png",
+    Keybinds     = ASSET_BASE .. "tab-keybinds.png",
+    Testing      = ASSET_BASE .. "tab-testing.png",
+    Search       = ASSET_BASE .. "search.png",
+    Close        = ASSET_BASE .. "close.png",
+    SectionIcon  = ASSET_BASE .. "section.png",
+    CheckIcon    = ASSET_BASE .. "check.png",     -- ✓  toggle ON
+    CrossIcon    = ASSET_BASE .. "cross.png",     -- ✗  toggle OFF
+    TeleportIcon = ASSET_BASE .. "teleport.png",
 }
 
 -- Accent colours per sidebar tab (left bar strip)

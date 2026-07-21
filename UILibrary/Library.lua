@@ -540,19 +540,16 @@ function Library:CreateWindow(config)
                     Font            = Enum.Font.GothamBold,
                 }, valBox)
 
-                -- Slider track
-                local track = make("Frame", {
-                    Size            = UDim2.new(1, -44, 0, 10),
-                    Position        = UDim2.new(0, 40, 0.5, -5),
-                    -- Re-anchor: put track to the right of valBox
-                    AnchorPoint     = Vector2.new(0, 0),
-                    BackgroundColor3= C.SliderTrack,
-                    BorderSizePixel = 0,
+                -- Slider track (arrow-shaped asset image)
+                local track = make("ImageLabel", {
+                    Size                   = UDim2.new(0.54, -60, 0, 34),
+                    Position               = UDim2.new(0.46, 46, 0.5, -17),
+                    BackgroundTransparency = 1,
+                    BorderSizePixel        = 0,
+                    Image                  = ASSET_BASE .. "slider-track.png",
+                    ScaleType              = Enum.ScaleType.Stretch,
+                    ClipsDescendants       = false,
                 }, card)
-                -- Readjust: starts after valBox (≈50% + 44px gap)
-                track.Position = UDim2.new(0.46, 46, 0.5, -5)
-                track.Size     = UDim2.new(0.54, -60, 0, 10)
-                corner(5, track)
 
                 -- Fill bar
                 local fill = make("Frame", {
